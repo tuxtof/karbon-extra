@@ -1,0 +1,11 @@
+defaultNamespace: starboard-system
+helm:
+  releaseName: starboard-exporter
+  repo: https://giantswarm.github.io/giantswarm-catalog
+  chart: starboard-exporter
+  version: 0.5.0
+  valuesFiles:
+  - values.yaml
+
+kustomize:
+  dir: overlays/extra

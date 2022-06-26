@@ -1,0 +1,11 @@
+defaultNamespace: monitoring
+helm:
+  releaseName: grafana
+  repo: https://grafana.github.io/helm-charts
+  chart: grafana
+  version: 6.31.1
+  valuesFiles:
+  - values.yaml
+
+kustomize:
+  dir: overlays/dashboard

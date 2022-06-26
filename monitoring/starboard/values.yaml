@@ -1,0 +1,6 @@
+excludeNamespaces: '{{ .Release.Namespace }}'
+operator:
+  configAuditScannerScanOnlyCurrentRevisions: true
+  vulnerabilityScannerScanOnlyCurrentRevisions: true
+trivy:
+  ignoreUnfixed: "true"

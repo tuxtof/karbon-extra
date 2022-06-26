@@ -1,0 +1,15 @@
+defaultNamespace: starboard-system
+helm:
+  releaseName: starboard
+  repo: https://aquasecurity.github.io/helm-charts/
+  chart: starboard-operator
+  version: 0.10.6
+  valuesFiles:
+  - values.yaml
+diff:
+  comparePatches:
+  - apiVersion: aquasecurity.github.io/v1alpha1
+    kind: ClusterComplianceReport
+    name: nsa
+    operations:
+    - {"op":"remove", "path":"/metadata/labels"}
