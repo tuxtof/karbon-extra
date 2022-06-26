@@ -1,0 +1,22 @@
+grafana:
+  service:
+    type: NodePort
+
+  sidecar:
+    dashboards:
+      enabled: true
+    datasources:
+      enabled: true
+
+  datasources:
+    datasources.yaml:
+      apiVersion: 1
+      datasources:
+      - name: Prometheus-k8s
+        type: prometheus
+        access: proxy
+        url: http://prometheus-k8s.ntnx-system:9090
+
+  persistence:
+    type: pvc
+    enabled: true
